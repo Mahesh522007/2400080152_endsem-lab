@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            margin: 8px 0;
+            padding: 6px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            padding: 8px;
+            border: none;
+            width: 100%;
+        }
+        #message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2 align="center">Student Feedback Form</h2>
+
+<form id="feedbackForm" onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Course:</label>
+    <input type="text" id="course">
+
+    <label>Rating:</label>
+    <select id="rating">
+        <option value="">Select</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <label>Comments:</label>
+    <textarea id="comments"></textarea>
+
+    <label>Upload File:</label>
+    <input type="file" id="file">
+
+    <button type="submit">Submit</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let course = document.getElementById("course").value;
+    let rating = document.getElementById("rating").value;
+    let comments = document.getElementById("comments").value;
+    let file = document.getElementById("file").value;
+
+    if (name === "" || course === "" || rating === "" || comments === "" || file === "") {
+        alert("All fields are required");
+        return false;
+    }
+
+    console.log("Name:", name);
+    console.log("Course:", course);
+    console.log("Rating:", rating);
+    console.log("Comments:", comments);
+    console.log("File:", file);
+
+    document.getElementById("message").innerText = 
+        "Feedback submitted successfully!";
+
+    return false;
+}
+</script>
+
+</body>
+</html>

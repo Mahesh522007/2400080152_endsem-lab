@@ -1,0 +1,30 @@
+body{
+    font-family: Arial;
+    background:#f2f2f2;
+}
+form{
+    background:white;
+    width:300px;
+    margin:auto;
+    padding:20px;
+    border-radius:5px;
+}
+label{
+    font-weight:bold;
+}
+input, select, textarea{
+    width:100%;
+    margin-bottom:10px;
+}
+button{
+    background:green;
+    color:white;
+    padding:8px;
+    width:100%;
+    border:none;
+}
+#message{
+    text-align:center;
+    font-weight:bold;
+    color:green;
+}
